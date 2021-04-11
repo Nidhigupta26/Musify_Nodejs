@@ -6,12 +6,12 @@ $(".delete").on("click", function () {
         type: "DELETE",
         dataType: "json",
         success: function (data) {
-            //id.delete();
+
                 
         }
     });
     location.reload()
-    //alert("Deleted successfully");
+
 });
 
 $(".overlay").on('click', function(){
@@ -34,10 +34,10 @@ $(".delete").on("click", function () {
         type: "DELETE",
         dataType: "json",
         success: function (data) {
-            //id.delete();
+
                 
         }
     });
     location.reload()
-   // alert("Deleted successfully");
+
 });

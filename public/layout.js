@@ -20,27 +20,9 @@ $(".overlay").on('click', function(){
    player.setAttribute('data1',x);
    player.setAttribute('data2',z)
    player.play();
-
-    // var data={
-    //     audioSrc:$("#audio0").attr('src'),
-    //     image:$("#audio0").attr('data1'),
-    //     songName:$("#audio0").attr('data2')
-    // }
-    // $.ajax({
-    //     type:"POST",
-    //     url:"/playlist/recent/add",
-    //     contentType:"application/json",
-    //     data:JSON.stringify(data),
-    //     dataType:"json",
-    //     success:function(data){
-    //        console.log(data);
-    //     }
-    //     });
 })
 
 
-
-//to add the song to playlist from player
 $('#plus').on('click',function(){
 var data={
     audioSrc: $("#audio0").attr("src"),
@@ -57,11 +39,9 @@ success:function(data){
    console.log(data);
 }
 });
-//alert("song is added to playlist");
 window.location.replace('/playlist');
 });
 
-// search-songs
 
      $("#search").on('click', function (e) {
          e.preventDefault();
@@ -122,9 +102,6 @@ window.location.replace('/playlist');
       });
 
 
-
-
-//player loop
 var x = document.getElementById("audio0");
 
 function enableLoop() {
@@ -136,8 +113,6 @@ function disableLoop(){
    x.loop = false;
   x.load();
 } 
-
-//to play next song
 var i=0;
 $("#next").on("click",function() {
     i++;
@@ -158,7 +133,6 @@ $("#next").on("click",function() {
     })    
   })
 
-//to play previous song
 
 var z=0; 
 $("#prev").on("click",function() {

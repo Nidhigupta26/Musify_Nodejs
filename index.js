@@ -24,22 +24,19 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-// load router
+
 var homeRouter = require('./routes/home');
-//var playlistRouter=require('./routes/playlist');
 
 var playlistRouter = require('./routes/playlist');
 
-// hbs middleware
+
 app.set('view engine', 'hbs');
 
-// express body-parser middleware
 app.use(express.json());
 app.use(express.urlencoded({
     extended: false
 }));
 
-// static folder middleware
 app.use(express.static('public'));
 hbs.registerPartials(__dirname + '/views/partials/');
 
@@ -52,10 +49,8 @@ hbs.registerHelper('is', function (parameter, string, options) {
     }
 });
 
-// use router
 app.use('/', homeRouter);
 
-// playlist router
 app.use("/playlist", playlistRouter)
 
 
@@ -125,10 +120,6 @@ app.get("/logout", function (req, res) {
 
 })
 
-
-
-
-//The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function (req, res) {
     res.status(404).send('<h1>what??? page not found! 404</h1>');
 
